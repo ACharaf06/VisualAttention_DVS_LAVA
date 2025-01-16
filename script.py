@@ -1,7 +1,5 @@
 import numpy as np
 
-print("This is a test: thrs1")
-
 #Import Process level primitives
 from lava.magma.core.process.process import AbstractProcess
 from lava.magma.core.process.variable import Var
@@ -37,7 +35,6 @@ from lava.magma.core.run_conditions import RunSteps
 from lava.proc.learning_rules.stdp_learning_rule import STDPLoihi
 from lava.magma.core.learning.learning_rule import Loihi2FLearningRule
 
-import numpy as np
 import tonic
 from lava.proc.conv import utils
 from scipy.sparse import coo_matrix, coo_array
