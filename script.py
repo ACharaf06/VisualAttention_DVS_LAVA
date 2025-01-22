@@ -182,9 +182,6 @@ def initialize_wta_weights(sensor_width, sensor_height, w_max=50):
     
     return weights
 
-#Initialize our realing rule
-our_rule = Loihi2FLearningRule() #TDB
-
 """
 # Create plastic connection
 shape_conn=(sensor_size[0]*sensor_size[1],sensor_size[0]*sensor_size[1])
@@ -212,7 +209,7 @@ mat = coo_matrix((sparse_conv[2].astype(int),
                   shape=(256, 256))
 #sparse = Sparse(weights=mat)
 sparse = LearningSparse(weights=mat,
-                        learning_rule=our_rule)
+                        learning_rule=STDP)
 dense = Dense(weights=weights,     # WTA weights         
                 name='dense')
 lif1 = LIF(shape=(sensor_size[0]*sensor_size[1],),                         # Number and topological layout of units in the process
