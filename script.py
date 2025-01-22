@@ -59,22 +59,6 @@ events = events.astype(int)
 events = events
 events[:, 3]+=3
 #print(events)
-'''
-
-
-events = []
-t=1
-for x in range(16):
-    for y in range(16):
-        events.append([x, y, 1, t])
-'''
-'''
-events=[
-    [3, 3, 1, 5],
-    [3, 3, 1, 9]
-]
-'''
-
 
 events = np.array(events)
 # Classes to feed our events to an SNN
@@ -181,15 +165,6 @@ def initialize_wta_weights(sensor_width, sensor_height, w_max=50):
             weights[i, j] = min(np.exp(d) / (sensor_width * sensor_height), w_max)
     
     return weights
-
-"""
-# Create plastic connection
-shape_conn=(sensor_size[0]*sensor_size[1],sensor_size[0]*sensor_size[1])
-wgt_plast_conn = np.full(shape_conn, 50)
-plast_conn = LearningDense(weights=wgt_plast_conn,
-                           learning_rule=stdp,
-                           name='plastic_dense')
-"""
 
 # Initialize the weights
 weights = initialize_wta_weights(sensor_size[0],sensor_size[1])
